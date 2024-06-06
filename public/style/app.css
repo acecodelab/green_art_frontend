@@ -1875,3 +1875,49 @@ client-area
 .badge-danger {
   background-color: #ff79863d;
 }
+.hero-banner-area {
+  padding: 150px 0 80px 0;
+  /* background: linear-gradient(0deg, #021F00 0%, #021F00 100%), #F1FFF0; */
+}
+
+.charaty-check input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.charaty-check label {
+  position: relative;
+  cursor: pointer;
+}
+
+.charaty-check label:before {
+  content:'';
+  -webkit-appearance: none;
+  background-color: #40a838;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.charaty-check input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

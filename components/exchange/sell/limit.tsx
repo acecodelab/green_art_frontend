@@ -259,6 +259,18 @@ const Limit = ({
                         {dashboard?.order_data?.total?.trade_wallet?.coin_type}
                       </span>
                     </button>
+                    <div className="d-flex justify-content-between mt-4">
+                      <div className="charaty-check">
+                          <input type="checkbox" name="" id="charity1" />
+                          <label htmlFor="charity1" className="charity-label">
+                            <span>
+                      Charity Donation: <span className="greenText">0.1 USDT</span> </span>
+                      </label>
+                      </div>
+                      <div className="charity-fee">
+                         <span>Fees <span className="greenText">0.1 USDT</span></span>
+                      </div>
+                    </div>
                   </div>
                 )}
               </form>

@@ -878,10 +878,10 @@ const Navbar = ({
                         </Link>
                       )}
 
-                      <Link href={isLoggedIn ? "/" : "/signin"}>
+                      <Link href={isLoggedIn ? "#" : "/signin"}>
                           <li
                             className={
-                              router.pathname == "/"
+                              router.pathname == "#"
                                 ? "cp-user-active-page"
                                 : ""
                             }
