@@ -878,6 +878,29 @@ const Navbar = ({
                         </Link>
                       )}
 
+                      <Link href={isLoggedIn ? "#" : "/signin"}>
+                          <li
+                            className={
+                              router.pathname == "#"
+                                ? "cp-user-active-page"
+                                : ""
+                            }
+                          >
+                            <Link href="/">
+                              <a>
+                                {/* <span className="cp-user-icon">
+                                  <FaTradeFederation />
+                                </span> */}
+                                <span className="cp-user-name">
+                                  {navbar?.myReferral?.name
+                                    ? navbar.myReferral?.name
+                                    : t("NFT")}
+                                </span>
+                              </a>
+                            </Link>
+                          </li>
+                        </Link>
+
                       {Number(settings?.enable_demo_trade) === 1 && (
                         <li
                           className={
