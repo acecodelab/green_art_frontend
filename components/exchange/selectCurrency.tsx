@@ -8,10 +8,33 @@ import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import DataTable from "react-data-table-component";
 import { setLoading } from "state/reducer/user";
+
+type Pair = {
+  balance: string;
+  bot_trading: number;
+  child_coin_id: number;
+  child_coin_name: string;
+  coin_pair: string;
+  coin_pair_id: number;
+  coin_pair_name: string;
+  est_balance: string;
+  high: string;
+  icon: string;
+  is_favorite: number;
+  last_price: string;
+  low: string;
+  pair_name: string;
+  parent_coin_id: number;
+  parent_coin_name: string;
+  price_change: string;
+  user_id: string;
+  volume: string;
+};
+
 import { unlistenAllChannels } from "state/actions/exchange";
 const SelectCurrency = () => {
   const router = useRouter();
-  const [pairs, setPairs] = React.useState([]);
+  const [pairs, setPairs] = React.useState<Pair[]>([]);
   const { t } = useTranslation("common");
   const { dashboard } = useSelector((state: RootState) => state.exchange);
   const customStyles = {
@@ -179,7 +202,31 @@ const SelectCurrency = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (dashboard?.pairs) {
-      setPairs(dashboard.pairs);
+      const newPair: Pair = {
+        balance: "0.10",
+        bot_trading: 2,
+        child_coin_id: 2,
+        child_coin_name: "GAC",
+        coin_pair: "GAC_USDT",
+        coin_pair_id: 2,
+        coin_pair_name: "GAC/USDT",
+        est_balance: "0.00",
+        high: "71187.00000000",
+        icon: "https://admin.orarisetechnology.com/assets/img/placeholder-image.png",
+        is_favorite: 0,
+        last_price: "0.07992958",
+        low: "71136.00000000",
+        pair_name: "GAC_USDT",
+        parent_coin_id: 2,
+        parent_coin_name: "USDT",
+        price_change: "0.00",
+        user_id: "",
+        volume: "18.35688900"
+      };
+  
+      const newPairs: Pair[] = [...dashboard.pairs, newPair];
+  
+      setPairs(newPairs);
     }
   }, [dashboard?.pairs]);
   return (
