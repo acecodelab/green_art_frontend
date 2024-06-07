@@ -103,7 +103,7 @@ const Footer = () => {
                       <h4>
                         {customPageData?.custom_page_list[0]?.name
                           ? customPageData?.custom_page_list[0]?.name
-                          : t("About Us")}
+                          : t("About")}
                       </h4>
                     </div>
                     <div className="widget-inner">
