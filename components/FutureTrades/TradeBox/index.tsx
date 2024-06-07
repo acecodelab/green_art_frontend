@@ -25,14 +25,14 @@ const TradeBox = ({ ThemeColor }: any) => {
       <div className="col-xl-9">
         <div className="row">
           <div className="col-xl-8 px-0 exchange-area">
-            {/* {currentPair && (
+            {currentPair && (
               <TradingChart
                 //@ts-ignore
                 currentPair={currentPair}
                 theme={theme}
                 ThemeColor={ThemeColor}
               />
-            )} */}
+            )}
           </div>
           <div className="col-xl-4 px-0 exchange-area">
             <ExchangeBox

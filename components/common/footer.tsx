@@ -101,7 +101,9 @@ const Footer = () => {
                   <div className="single-wedgets text-widget">
                     <div className="widget-title">
                       <h4>
-                       About
+                        {customPageData?.custom_page_list[0]?.name
+                          ? customPageData?.custom_page_list[0]?.name
+                          : t("About Us")}
                       </h4>
                     </div>
                     <div className="widget-inner">
