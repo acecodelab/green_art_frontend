@@ -81,6 +81,7 @@ const Navbar = ({
     isLoggedIn && getNotifications();
   }, [isLoggedIn]);
   useEffect(() => {
+    console.log(router.locale)
     if (router.locale === "ar") {
       document.body.classList.add("rtl-style");
     } else {
@@ -90,6 +91,10 @@ const Navbar = ({
 
   const handleSpotTradeUrl = () => {
     let spotUrl = `/exchange/dashboard`;
+    if(router.locale == undefined){
+      router.locale = "en"
+    }
+    
     if (currentPair && router.locale !== "en") {
       return `/${router.locale}/${spotUrl}?coin_pair=${currentPair}`;
     }
