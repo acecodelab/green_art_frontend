@@ -223,7 +223,7 @@ p {
 */
 
 .cp-user-top-bar {
-  background: var(--card-background-color);
+  background: var(--main-background-color);
   padding: 10px 0;
   position: fixed;
   z-index: 999;
@@ -4616,7 +4616,7 @@ select:-webkit-autofill:focus {
   display: flex;
   align-items: center;
   background: transparent;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   gap: 10px;
   color: var(--font-color) !important;

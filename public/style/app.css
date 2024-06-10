@@ -1877,9 +1877,15 @@ client-area
 }
 .hero-banner-area {
   padding: 150px 0 80px 0;
-  /* background: linear-gradient(0deg, #021F00 0%, #021F00 100%), #F1FFF0; */
+  background: linear-gradient(0deg, #021F00 0%, #021F00 100%), #F1FFF0;
 }
-
+.hero-banner-area .banner-title, .hero-banner-area .banner-content {
+  color: #fff !important;
+}
+a.glass-button.mt-4 {
+  background: #fff;
+  color: #021f00;
+}
 .charaty-check input {
   padding: 0;
   height: initial;

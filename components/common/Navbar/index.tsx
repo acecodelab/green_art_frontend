@@ -114,7 +114,7 @@ const Navbar = ({
     <>
       {isLoggedIn ? (
         <>
-          <div className="cp-user-top-bar position-fixed">
+          <div className="cp-user-top-bar position-fixed for-dark">
             <div className="container-fluid">
               <div className="d-flex align-items-center justify-content-between main-navbar">
                 <div className="d-flex align-items-center gap-20">
