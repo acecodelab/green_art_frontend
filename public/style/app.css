@@ -1934,7 +1934,9 @@ img.cover-img.banner-image {
 .container-4xl.ad-bg {
   text-align: center;
 }
-
+.cp-user-main-wrapper-dashboard {
+  margin-top: 80px;
+}
 @media(min-width: 1024px){
   img.cover-img.banner-image {
   height: 44.69vw; 
