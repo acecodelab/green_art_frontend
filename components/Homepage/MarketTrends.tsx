@@ -572,7 +572,7 @@ const MarketTrends = ({
           </div>
         </section>
       )}
-      <div className="container-4xl ">
+      <div className="container-4xl ad-bg">
         {Number(landing?.landing_advertisement_section_status) === 1 && (
           <Link href={`${landing?.landing_advertisement_url ?? "#"}`}>
             <img
@@ -581,7 +581,7 @@ const MarketTrends = ({
                   ? landing?.landing_advertisement_image
                   : "/tradex-cover.png"
               }
-              className="cover-img cursor-pointer mt-0"
+              className="cover-img cursor-pointer mt-4 mx-auto banner-image"
             />
           </Link>
         )}

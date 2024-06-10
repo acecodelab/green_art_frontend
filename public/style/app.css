@@ -1927,3 +1927,16 @@ a.glass-button.mt-4 {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+img.cover-img.banner-image {
+  height: 100%;
+  width: auto;
+}
+.container-4xl.ad-bg {
+  text-align: center;
+}
+
+@media(min-width: 1024px){
+  img.cover-img.banner-image {
+  height: 44.69vw; 
+  }
+}

@@ -16565,7 +16565,7 @@ input:checked + .gift-card-buy-slider:before {
 }
 
 .max-h-50 {
-  max-height: 50px !important;
+  max-height: 80px !important;
 }
 
 .p-6 {

@@ -108,19 +108,19 @@ const Footer = () => {
                     </div>
                     <div className="widget-inner">
                       <ul>
-                        {parseInt(settings?.blog_news_module) === 1 && (
+                        {/* {parseInt(settings?.blog_news_module) === 1 && ( */}
                           <li>
                             <Link href={"/blog"}>{t("Blog")}</Link>
                           </li>
-                        )}
+                        {/* )} */}
                         {parseInt(settings?.enable_staking) === 1 && (
                           <li>
                             <Link href={"/staking"}>{t("Staking")}</Link>
                           </li>
                         )}
 
-                        {parseInt(settings?.knowledgebase_support_module) ===
-                          1 && (
+                        {/* {parseInt(settings?.knowledgebase_support_module) ===
+                          1 && ( */}
                           <li>
                             <Link
                               href={
@@ -130,20 +130,20 @@ const Footer = () => {
                               {t("Support")}
                             </Link>
                           </li>
-                        )}
-                        {parseInt(settings?.knowledgebase_support_module) ===
-                          1 && (
+                        {/* )} */}
+                        {/* {parseInt(settings?.knowledgebase_support_module) ===
+                          1 && ( */}
                           <li>
                             <Link href={"/knowledgebase"}>
                               {t("Knowledgebase")}
                             </Link>
                           </li>
-                        )}
-                        {parseInt(settings?.blog_news_module) === 1 && (
+                        {/* )} */}
+                        {/* {parseInt(settings?.blog_news_module) === 1 && ( */}
                           <li>
                             <Link href={"/news"}>{t("News")}</Link>
                           </li>
-                        )}
+                        {/* )} */}
                       </ul>
                     </div>
                   </div>
