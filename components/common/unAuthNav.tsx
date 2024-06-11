@@ -58,16 +58,7 @@ const UnAuthNav = ({
     setNotification(data.data.data);
   };
   const dispatch = useDispatch();
-  useEffect(() => {
-    const addTranslationScript = () => {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      document.body.appendChild(script);
-    };
-
-    addTranslationScript();
-  }, []);
+ 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
