@@ -37,7 +37,6 @@ import { GiBuyCard, GiSellCard, GiTrade } from "react-icons/gi";
 import { GoStop } from "react-icons/go";
 import { AiFillCaretDown, AiFillGift, AiOutlineClose } from "react-icons/ai";
 import PlaceTopLeft from "components/gradient/placeTopLeft";
-
 const Navbar = ({
   settings,
   isLoggedIn,
@@ -62,6 +61,16 @@ const Navbar = ({
     const data = await notification();
     dispatch(setNotificationData(data.data.data));
   };
+  useEffect(() => {
+    const addTranslationScript = () => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
+    };
+
+    addTranslationScript();
+  }, []);
   useEffect(() => {
     showSettings &&
       checkDashboardThemeSettings(setThemeColor, ThemeColor, setLayout);
@@ -109,7 +118,6 @@ const Navbar = ({
 
     return spotUrl;
   };
-
   return (
     <>
       {isLoggedIn ? (
@@ -1963,7 +1971,7 @@ const Navbar = ({
                           </label>
                         </div>
                       </li>
-                      <li className={"nav-item"}>
+                      {/* <li className={"nav-item"}>
                         <div className="d-flex gap-5 align-items-center py-3">
                           <span
                             className=""
@@ -1988,7 +1996,7 @@ const Navbar = ({
                             }
                           </span>
                         </div>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </nav>

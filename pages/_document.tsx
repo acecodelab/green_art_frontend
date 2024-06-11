@@ -16,6 +16,24 @@ export default function Document() {
         />
         {/* <link rel="shortcut icon" href="../fav.png" /> */}
         <script src="/static/datafeeds/udf/dist/bundle.js" />
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                  {
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,es,fr,it',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false,
+                  },
+                  'google_translate_element'
+                );
+              }
+            `,
+          }}
+        />
       </Head>
       <body>
         <Main />

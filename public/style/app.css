@@ -1870,7 +1870,7 @@ client-area
   font-size: 1.9rem;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
-  word-spacing: 100vw;
+  /* word-spacing: 100vw; */
 }
 .badge-danger {
   background-color: #ff79863d;
@@ -1934,8 +1934,71 @@ img.cover-img.banner-image {
 .container-4xl.ad-bg {
   text-align: center;
 }
-.cp-user-main-wrapper-dashboard {
-  margin-top: 80px;
+#google_translate_element {
+  font-weight: 500;
+  width: auto;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* background: url(../angle-down.svg) 100% / 15% no-repeat, #404040; */
+  z-index: 9;
+  font-size: 18px;
+}
+.main-menu .goog-te-gadget-simple span {
+  color: #fff;
+  border: none !important;
+  font-size: 16px;
+}
+.main-menu .goog-te-gadget-simple img {
+  display: none;
+}
+.main-menu .goog-te-gadget-simple {
+  background: transparent;
+  border: none;
+}
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none;
+}
+div#goog-gt-tt {
+  display: none !important;
+}
+.VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q{
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.VIpgJd-ZVi9od-vH1Gmf-ibnC6b div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b:link div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b:visited div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b:active div {
+  color: #fff !important;
+  background: #021f00 !important;
+}
+.VIpgJd-ZVi9od-vH1Gmf {
+  background-color: #021f00 !important;
+  text-decoration: none;
+  border: 1px solid #021f00 !important;
+  overflow: hidden;
+  padding: 10px !important;
+}
+.VIpgJd-ZVi9od-vH1Gmf-ibnC6b-gk6SMd div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b-gk6SMd:link div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b-gk6SMd:visited div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b-gk6SMd:hover div, .VIpgJd-ZVi9od-vH1Gmf-ibnC6b-gk6SMd:active div {
+  color: #48e81b !important;
+  font-weight: bold;
+}
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span[aria-hidden="true"] {
+  display: none !important;
+}
+
+.VIpgJd-ZVi9od-xl07Ob-lTBxed::after {
+  /* content: url(../down-arrow.png); */
+  content: "▼";
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: top;
+  color: #fff;
+  font-size: 10px;
+  font-family: system-ui;
 }
 @media(min-width: 1024px){
   img.cover-img.banner-image {

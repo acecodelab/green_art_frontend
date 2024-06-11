@@ -815,7 +815,7 @@ span.cp-user-icon {
 .cp-user-main-wrapper {
   margin-left: 70px;
   padding: 0;
-  margin-top: 120px !important;
+  margin-top: 60px !important;
   overflow: hidden;
   display: flex;
   justify-content: space-between;

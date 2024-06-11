@@ -259,7 +259,7 @@ const NotificationDropdown = ({
 
               <nav className="main-menu">
                 <ul>
-                  <li className="hm-notify">
+                  {/* <li className="hm-notify">
                     <a
                       className="arrow-icon h-48"
                       href="#"
@@ -278,7 +278,8 @@ const NotificationDropdown = ({
                         </li>
                       ))}
                     </ul>
-                  </li>
+                  </li> */}
+                  <div id="google_translate_element"></div>
                   <li
                     onClick={() => {
                       darkModeToggle(settings, setTheme, dispatch);

@@ -124,9 +124,6 @@ const UnAuthNav = ({
                       href="#"
                       aria-expanded="true"
                     >
-                      {/* <span className="cp-user-icon">
-                        <BsBarChartLine />
-                      </span> */}
                       <span>{t("Exchange")}</span>
                       <div>
                         <AiFillCaretDown size={12} />

@@ -110,7 +110,7 @@ const Dashboard: NextPage = () => {
             setLayout={setLayout}
           />
           {isLoading && <Loading />}
-          <div className="mt-5"></div>
+          <div className="mt-5 margin-top-80"></div>
           <div className="cp-user-sidebar-area">
             <div className="scroll-wrapper cp-user-sidebar-menu scrollbar-inner position-relative">
               <div className="cp-user-sidebar-menu scrollbar-inner scroll-content h-auto mb-0 mr-0 max-h-0"></div>
