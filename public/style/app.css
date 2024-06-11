@@ -1958,8 +1958,10 @@ img.cover-img.banner-image {
   display: none;
 }
 .main-menu .goog-te-gadget-simple {
-  background: transparent;
-  border: none;
+  background: #000;
+  border: 1px solid #000;
+  padding: 3px 10px;
+  border-radius: 5px;
 }
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
   display: none;
@@ -1999,6 +2001,12 @@ div#goog-gt-tt {
   color: #fff;
   font-size: 10px;
   font-family: system-ui;
+}
+body{
+  top:0 !important;
+}
+.margin-top-80 {
+  margin-top: 120px !important;
 }
 @media(min-width: 1024px){
   img.cover-img.banner-image {

@@ -45,7 +45,7 @@ const Exchange = () => {
   return (
     <div className="exchange-area">
       <div className="background-col">
-        <div className="cp-user-main-wrapper-dashboard">
+        <div className="cp-user-main-wrapper-dashboard margin-top-80">
           <div className="custom-container">
             <div id="dashboard">
               <div className="row">

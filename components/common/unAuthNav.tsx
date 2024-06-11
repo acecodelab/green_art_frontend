@@ -58,7 +58,16 @@ const UnAuthNav = ({
     setNotification(data.data.data);
   };
   const dispatch = useDispatch();
+  useEffect(() => {
+    const addTranslationScript = () => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
+    };
 
+    addTranslationScript();
+  }, []);
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -227,8 +236,8 @@ const UnAuthNav = ({
                       </a>
                     </Link>
                   </li>
-
-                  <li className="hm-notify">
+                  <div id="google_translate_element"></div>
+                  {/* <li className="hm-notify">
                     <a
                       className="arrow-icon h-48"
                       href="#"
@@ -247,8 +256,7 @@ const UnAuthNav = ({
                         </li>
                       ))}
                     </ul>
-                  </li>
-
+                  </li> */}
                   <li
                     onClick={() => {
                       darkModeToggle(settings, setTheme, dispatch);
