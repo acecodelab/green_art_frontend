@@ -201,33 +201,7 @@ const SelectCurrency = () => {
   ];
   const dispatch = useDispatch();
   useEffect(() => {
-    if (dashboard?.pairs) {
-      const newPair: Pair = {
-        balance: "0.10",
-        bot_trading: 2,
-        child_coin_id: 2,
-        child_coin_name: "GAC",
-        coin_pair: "GAC_USDT",
-        coin_pair_id: 2,
-        coin_pair_name: "GAC/USDT",
-        est_balance: "0.00",
-        high: "71187.00000000",
-        icon: "https://admin.orarisetechnology.com/assets/img/placeholder-image.png",
-        is_favorite: 0,
-        last_price: "0.07992958",
-        low: "71136.00000000",
-        pair_name: "GAC_USDT",
-        parent_coin_id: 2,
-        parent_coin_name: "USDT",
-        price_change: "0.00",
-        user_id: "",
-        volume: "18.35688900"
-      };
-  
-      const newPairs: Pair[] = [...dashboard.pairs, newPair];
-  
-      setPairs(newPairs);
-    }
+    setPairs(dashboard?.pairs);
   }, [dashboard?.pairs]);
   return (
     <div

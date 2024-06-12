@@ -16,6 +16,8 @@ export default function Document() {
         />
         {/* <link rel="shortcut icon" href="../fav.png" /> */}
         <script src="/static/datafeeds/udf/dist/bundle.js" />
+
+{/*         
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -33,7 +35,7 @@ export default function Document() {
               }
             `,
           }}
-        />
+        /> */}
       </Head>
       <body>
         <Main />

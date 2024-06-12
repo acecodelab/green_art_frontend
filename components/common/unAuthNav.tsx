@@ -82,6 +82,49 @@ const UnAuthNav = ({
     }
   }, [router.locale]);
 
+
+  useEffect(() => {
+    const addTranslationScript = () => {
+      // Remove existing Google Translate script if it exists
+      const existingScript = document.querySelector('script[src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      // Remove existing initialization script if it exists
+      const existingInitScript = document.querySelector('script#google-translate-init');
+      if (existingInitScript) {
+        existingInitScript.remove();
+      }
+
+      // Add Google Translate script
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
+
+      // Append the initialization script
+      const initScript = document.createElement('script');
+      initScript.type = 'text/javascript';
+      initScript.id = 'google-translate-init';
+      initScript.innerHTML = `
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: 'en',
+              includedLanguages: 'en,es,fr,it',
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              autoDisplay: false,
+            },
+            'google_translate_element'
+          );
+        }
+      `;
+      document.body.appendChild(initScript);
+    };
+
+    addTranslationScript();
+  }, []);
   const handleSpotTradeUrl = () => {
     let spotUrl = `/exchange/dashboard`;
     if (currentPair && router.locale !== "en") {

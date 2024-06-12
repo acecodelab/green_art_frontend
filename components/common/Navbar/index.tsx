@@ -61,16 +61,7 @@ const Navbar = ({
     const data = await notification();
     dispatch(setNotificationData(data.data.data));
   };
-  useEffect(() => {
-    const addTranslationScript = () => {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      document.body.appendChild(script);
-    };
 
-    addTranslationScript();
-  }, []);
   useEffect(() => {
     showSettings &&
       checkDashboardThemeSettings(setThemeColor, ThemeColor, setLayout);
@@ -90,7 +81,7 @@ const Navbar = ({
     isLoggedIn && getNotifications();
   }, [isLoggedIn]);
   useEffect(() => {
-    console.log(router.locale)
+    console.log(router.locale);
     if (router.locale === "ar") {
       document.body.classList.add("rtl-style");
     } else {
@@ -100,10 +91,10 @@ const Navbar = ({
 
   const handleSpotTradeUrl = () => {
     let spotUrl = `/exchange/dashboard`;
-    if(router.locale == undefined){
-      router.locale = "en"
+    if (router.locale == undefined) {
+      router.locale = "en";
     }
-    
+
     if (currentPair && router.locale !== "en") {
       return `/${router.locale}/${spotUrl}?coin_pair=${currentPair}`;
     }
@@ -118,6 +109,57 @@ const Navbar = ({
 
     return spotUrl;
   };
+
+  if (isLoggedIn) {
+    useEffect(() => {
+      const addTranslationScript = () => {
+        // Remove existing Google Translate script if it exists
+        const existingScript = document.querySelector(
+          'script[src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"]'
+        );
+        if (existingScript) {
+          existingScript.remove();
+        }
+
+        // Remove existing initialization script if it exists
+        const existingInitScript = document.querySelector(
+          "script#google-translate-init"
+        );
+        if (existingInitScript) {
+          existingInitScript.remove();
+        }
+
+        // Add Google Translate script
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src =
+          "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        document.body.appendChild(script);
+
+        // Append the initialization script
+        const initScript = document.createElement("script");
+        initScript.type = "text/javascript";
+        initScript.id = "google-translate-init";
+        initScript.innerHTML = `
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+              {
+                pageLanguage: 'en',
+                includedLanguages: 'en,es,fr,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+              },
+              'google_translate_element'
+            );
+          }
+        `;
+        document.body.appendChild(initScript);
+      };
+
+      addTranslationScript();
+    }, []);
+  }
+
   return (
     <>
       {isLoggedIn ? (
@@ -892,27 +934,25 @@ const Navbar = ({
                       )}
 
                       <Link href={isLoggedIn ? "#" : "/signin"}>
-                          <li
-                            className={
-                              router.pathname == "#"
-                                ? "cp-user-active-page"
-                                : ""
-                            }
-                          >
-                            <Link href="/">
-                              <a>
-                                {/* <span className="cp-user-icon">
+                        <li
+                          className={
+                            router.pathname == "#" ? "cp-user-active-page" : ""
+                          }
+                        >
+                          <Link href="/">
+                            <a>
+                              {/* <span className="cp-user-icon">
                                   <FaTradeFederation />
                                 </span> */}
-                                <span className="cp-user-name">
-                                  {navbar?.myReferral?.name
-                                    ? navbar.myReferral?.name
-                                    : t("NFT")}
-                                </span>
-                              </a>
-                            </Link>
-                          </li>
-                        </Link>
+                              <span className="cp-user-name">
+                                {navbar?.myReferral?.name
+                                  ? navbar.myReferral?.name
+                                  : t("NFT")}
+                              </span>
+                            </a>
+                          </Link>
+                        </li>
+                      </Link>
 
                       {Number(settings?.enable_demo_trade) === 1 && (
                         <li
