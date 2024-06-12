@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -82,21 +83,8 @@ const UnAuthNav = ({
     }
   }, [router.locale]);
 
-
   useEffect(() => {
     const addTranslationScript = () => {
-      // Remove existing Google Translate script if it exists
-      const existingScript = document.querySelector('script[src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-
-      // Remove existing initialization script if it exists
-      const existingInitScript = document.querySelector('script#google-translate-init');
-      if (existingInitScript) {
-        existingInitScript.remove();
-      }
-
       // Add Google Translate script
       const script = document.createElement('script');
       script.type = 'text/javascript';
@@ -123,7 +111,10 @@ const UnAuthNav = ({
       document.body.appendChild(initScript);
     };
 
-    addTranslationScript();
+    const existingTranslateElement = document.querySelectorAll('#google_translate_element');
+    if (existingTranslateElement.length <= 1) {
+      addTranslationScript();
+    }
   }, []);
   const handleSpotTradeUrl = () => {
     let spotUrl = `/exchange/dashboard`;

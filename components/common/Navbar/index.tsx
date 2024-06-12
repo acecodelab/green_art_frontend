@@ -155,8 +155,10 @@ const Navbar = ({
         `;
         document.body.appendChild(initScript);
       };
-
-      addTranslationScript();
+      const existingTranslateElement = document.querySelectorAll('#google_translate_element');
+      if (existingTranslateElement.length <= 1) {
+        addTranslationScript();
+      }
     }, []);
   }
 
