@@ -109,9 +109,9 @@ const Footer = () => {
                     <div className="widget-inner">
                       <ul>
                         {/* {parseInt(settings?.blog_news_module) === 1 && ( */}
-                          <li>
+                          {/* <li>
                             <Link href={"/blog"}>{t("Blog")}</Link>
-                          </li>
+                          </li> */}
                         {/* )} */}
                         {parseInt(settings?.enable_staking) === 1 && (
                           <li>
@@ -119,9 +119,30 @@ const Footer = () => {
                           </li>
                         )}
 
+                        {customPageData?.links?.map(
+                          (item: any, index: any) =>
+                            item.type === 0 && (
+                              <li key={index}>
+                                {item.page_type === CUSTOM_PAGE_LINK_PAGE ? (
+                                  <Link href={"/page-details/" + item.key}>
+                                    {item.title}
+                                  </Link>
+                                ) : (
+                                  <a
+                                    href={item.page_link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                  >
+                                    {item.title}
+                                  </a>
+                                )}
+                              </li>
+                            )
+                        )}
+
                         {/* {parseInt(settings?.knowledgebase_support_module) ===
                           1 && ( */}
-                          <li>
+                          {/* <li>
                             <Link
                               href={
                                 isLoggedIn === true ? "/support" : "/signin"
@@ -129,20 +150,20 @@ const Footer = () => {
                             >
                               {t("Support")}
                             </Link>
-                          </li>
+                          </li> */}
                         {/* )} */}
                         {/* {parseInt(settings?.knowledgebase_support_module) ===
                           1 && ( */}
-                          <li>
+                          {/* <li>
                             <Link href={"/knowledgebase"}>
                               {t("Knowledgebase")}
                             </Link>
-                          </li>
+                          </li> */}
                         {/* )} */}
                         {/* {parseInt(settings?.blog_news_module) === 1 && ( */}
-                          <li>
+                          {/* <li>
                             <Link href={"/news"}>{t("News")}</Link>
-                          </li>
+                          </li> */}
                         {/* )} */}
                       </ul>
                     </div>
