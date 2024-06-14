@@ -5506,7 +5506,7 @@ select:-webkit-autofill:focus {
 }
 
 .section-wrapper-withHtml {
-  background: var(--card-background-color);
+  /* background: var(--card-background-color); */
   padding: 40px;
   display: flex;
   flex-direction: column;
