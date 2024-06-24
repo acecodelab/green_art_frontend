@@ -334,12 +334,13 @@ const Footer = () => {
               <div className="footer-bottom-wrap">
                 <div className="row align-items-center">
                   <div className="col-md-12">
-                    <div className="copyright-area text-center text-md-center">
+                    <div className="copyright-area d-flex justify-content-between">
                       <p>
                         {(copyright_text && copyright_text) ||
                           t("Copyright@2022")}{" "}
                         <a href="">{settings?.app_title ?? t("TradexPro")}</a>
                       </p>
+                      <p>Designed by <a href="https://idigitalweb.tech/" target="_blank">iDigital Web</a></p>
                     </div>
                   </div>
                 </div>
