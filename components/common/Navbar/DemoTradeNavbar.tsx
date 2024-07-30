@@ -76,7 +76,7 @@ const DemoTradeNavbar = ({
       arr.push(notification.id);
     });
     notificationSeen(arr).then((data: any) => {
-      dispatch(setNotificationData([]));
+      dispatch(setNotificationData(void[]));
     });
   };
   useEffect(() => {

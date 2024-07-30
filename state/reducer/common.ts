@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type commonType = {
-  settings: {};
-  theme: "";
+  settings: {
+    secret_key_available?: number;
+  };
+  theme: string;
 };
 
 const initialState: any = {
-  settings: {},
+  settings: {
+    secret_key_available: undefined,
+  },
   theme: "",
 };
 
@@ -17,14 +21,11 @@ export const commonSlice = createSlice({
     setSettings: (state, action: PayloadAction<commonType>) => {
       state.settings = action.payload;
     },
-    setThemeColor: (state, action: any) => {
+    setThemeColor: (state, action: PayloadAction<string>) => {
       state.theme = action.payload;
     },
-    setSecretKeySettings: (state, action: any) => {
-      state.settings = {
-        ...state.settings,
-        secret_key_available: action.payload,
-      };
+    setSecretKeySettings: (state, action: PayloadAction<number>) => {
+      state.settings.secret_key_available = action.payload;
     },
   },
 });

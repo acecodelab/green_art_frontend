@@ -4,6 +4,10 @@ export type ExchangeState = {
   dashboard: any;
   currentPair: string;
   OpenBookBuy: Array<any>;
+  sellPrice: number;
+  sellAmount: number;
+  buyPrice: number;
+  buyAmount: number;
   OpenBooksell: Array<any>;
   openOrderHistory: Array<any>;
   sellOrderHistory: Array<any>;
@@ -22,6 +26,10 @@ const initialState: ExchangeState = {
   openOrderHistory: [],
   sellOrderHistory: [],
   buyOrderHistory: [],
+  sellPrice: 0,
+  sellAmount: 0,
+  buyPrice: 0,
+  buyAmount: 0,
   tradeOrderHistory: [],
   publicTradesDashboard: [],
   marketTrades: [],
@@ -31,17 +39,17 @@ export const demoExchangeSlice = createSlice({
   name: "demoExchange",
   initialState,
   reducers: {
-    setSellPrice: (state: any, action: any) => {
-      state.dashboard.order_data.sell_price = action.payload;
+    setSellPrice(state, action: PayloadAction<number>) {
+      state.sellPrice = action.payload;
     },
-    setSellAmount: (state: any, action: any) => {
-      state.dashboard.order_data.sell_amount = action.payload;
+    setSellAmount(state, action: PayloadAction<number>) {
+      state.sellAmount = action.payload;
     },
-    setBuyPrice: (state: any, action: any) => {
-      state.dashboard.order_data.buy_price = action.payload;
+    setBuyPrice(state, action: PayloadAction<number>) {
+      state.buyPrice = action.payload;
     },
-    setBuyAmount: (state: any, action: any) => {
-      state.dashboard.order_data.buy_amount = action.payload;
+    setBuyAmount(state, action: PayloadAction<number>) {
+      state.buyAmount = action.payload;
     },
     setTotalVolume: (state: any, action: any) => {
       state.total_volume = action.payload;

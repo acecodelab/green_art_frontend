@@ -131,7 +131,7 @@ const SecretKeyModal = ({
                             <Link
                               href={"/user/settings"}
                               onClick={() => setIsSecretKeyModalOpen(false)}
-                            >
+                           passHref >
                               <h5 className="cursor-pointer text-underline">
                                 {t(`[ Set Two Factor ]`)}
                               </h5>
